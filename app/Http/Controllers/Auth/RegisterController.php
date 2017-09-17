@@ -47,10 +47,19 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        //dd($data);
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'alamat' => 'required|string|min:10',
+            'kota' => 'required|string|min:4',
+            'telepon' => 'required|string|min:5',
+            'ponsel' => 'required|string|min:9',
+            'ktp' => 'required|string|min:10',
+            'sim' => 'required|string|min:10',
+            'pekerjaan' => 'required|string|min:4',
+
         ]);
     }
 
@@ -66,6 +75,17 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'alamat' => $data['alamat'],
+            'kota' => $data['kota'],
+            'telepon' => $data['telepon'],
+            'ponsel' => $data['ponsel'],
+            'ktp' => $data['ktp'],
+            'sim' => $data['sim'],
+            'pekerjaan' => $data['pekerjaan'],
+            'nama_perusahaan' => $data['namaPerusahaan'],
+            'telepon_perusahaan' => $data['teleponPerusahaan'],
+            'alamat_perusahaan' => $data['alamatPerusahaan'],
+            'metode_pembayaran' => $data['metodePembayaran'], 
         ]);
     }
 }

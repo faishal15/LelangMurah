@@ -12,7 +12,7 @@
     <meta name="keywords" content="">
 
     <title>
-        LelangOnline
+        Obaju : e-commerce template
     </title>
 
     <meta name="keywords" content="">
@@ -20,19 +20,19 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
 
     <!-- styles -->
-    <link href="{{url('')}}/css/font-awesome.css" rel="stylesheet">
-    <link href="{{url('')}}/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{url('')}}/css/animate.min.css" rel="stylesheet">
-    <link href="{{url('')}}/css/owl.carousel.css" rel="stylesheet">
-    <link href="{{url('')}}/css/owl.theme.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
 
     <!-- theme stylesheet -->
-    <link href="{{url('')}}/css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+    <link href="css/style.default.css" rel="stylesheet" id="theme-stylesheet">
 
     <!-- your stylesheet with modifications -->
-    <link href="{{url('')}}/css/custom.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 
-    <script src="{{url('')}}/js/respond.min.js"></script>
+    <script src="js/respond.min.js"></script>
 
     <link rel="shortcut icon" href="favicon.png">
 
@@ -104,8 +104,8 @@
             <div class="navbar-header">
 
                 <a class="navbar-brand home" href="index.php" data-animate-hover="bounce">
-                    <img src="{{url('')}}/img/logo.png" alt="Obaju logo" class="hidden-xs">
-                    <img src="{{url('')}}/img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go to homepage</span>
+                    <img src="img/logo.png" alt="Obaju logo" class="hidden-xs">
+                    <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
@@ -265,12 +265,12 @@
                                         <div class="col-sm-3">
                                             <div class="banner">
                                                 <a href="#">
-                                                    <img src="{{url('')}}/img/banner.jpg" class="img img-responsive" alt="">
+                                                    <img src="img/banner.jpg" class="img img-responsive" alt="">
                                                 </a>
                                             </div>
                                             <div class="banner">
                                                 <a href="#">
-                                                    <img src="{{url('')}}/img/banner2.jpg" class="img img-responsive" alt="">
+                                                    <img src="img/banner2.jpg" class="img img-responsive" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -426,71 +426,18 @@
 
                         <hr>
 
-                        <form action="{{ route('register') }}" method="post">
-                            {{ csrf_field() }}
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : ''}}">
+                        <form action="customer-orders.php" method="post">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" name="email" class="form-control" id="email">
+                                <input type="text" class="form-control" id="email">
                             </div>
-                            <div class="form-group{{ $errors->has('name') ? ' has-error' : ''}}">
-                                <label for="name">Nama</label>
-                                <input type="text" name="name" class="form-control" id="name">
-                            </div>
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : ''}}">
+                            <div class="form-group">
                                 <label for="password">Password</label>
-                                <input type="password" name="password" class="form-control" id="password">
-                            </div>
-                            <div class="form-group">
-                                <label for="password-confirm">Konfirmasi Password</label>
-                                <input type="password" name="password_confirmation" class="form-control" id="password-confirm">
-                            </div>
-                            <div class="form-group{{ $errors->has('alamat') ? ' has-error' : ''}}">
-                                <label for="alamat">Alamat</label>
-                                <input type="text" name="alamat" class="form-control" id="alamat">
-                            </div>
-                            <div class="form-group{{ $errors->has('kota') ? ' has-error' : ''}}">
-                                <label for="kota">Kota</label>
-                                <input type="text" name="kota" class="form-control" id="kota">
-                            </div>
-                            <div class="form-group{{ $errors->has('telepon') ? ' has-error' : ''}}">
-                                <label for="telepon">Telepon</label>
-                                <input type="text" name="telepon" class="form-control" id="telepon">
-                            </div>
-                            <div class="form-group{{ $errors->has('ponsel') ? ' has-error' : ''}}">
-                                <label for="ponsel">Ponsel</label>
-                                <input type="text" name="ponsel" class="form-control" id="ponsel">
-                            </div>
-                            <div class="form-group{{ $errors->has('ktp') ? ' has-error' : ''}}">
-                                <label for="ktp">Nomor KTP</label>
-                                <input type="text" name="ktp" class="form-control" id="ktp">
-                            </div>
-                            <div class="form-group{{ $errors->has('sim') ? ' has-error' : ''}}">
-                                <label for="sim">Nomor SIM</label>
-                                <input type="text" name="sim" class="form-control" id="sim">
-                            </div>
-                            <div class="form-group{{ $errors->has('pekerjaan') ? ' has-error' : ''}}">
-                                <label for="pekerjaan">Pekerjaan</label>
-                                <input type="text" name="pekerjaan" class="form-control" id="pekerjaan">
-                            </div>
-                            <div class="form-group{{ $errors->has('namaPerusahaan') ? ' has-error' : ''}}">
-                                <label for="namaPerusahaan">Nama Perusahaan</label>
-                                <input type="text" name="namaPerusahaan" class="form-control" id="namaPerusahaan">
-                            </div>
-                            <div class="form-group{{ $errors->has('teleponPerusahaan') ? ' has-error' : ''}}">
-                                <label for="teleponPerusahaan">Telepon Perusahaan</label>
-                                <input type="text" name="teleponPerusahaan" class="form-control" id="teleponPerusahaan">
-                            </div>
-                            <div class="form-group{{ $errors->has('alamatPerusahaan') ? ' has-error' : ''}}">
-                                <label for="alamatPerusahaan">Alamat Perusahaan</label>
-                                <input type="text" name="alamatPerusahaan" class="form-control" id="alamatPerusahaan">
-                            </div>
-                            <div class="form-group{{ $errors->has('metodePembayaran') ? ' has-error' : ''}}">
-                                <label for="metodePembayaran">Metode Pembayaran</label>
-                                <input type="text" name="metodePembayaran" class="form-control" id="metodePembayaran">
-                            </div>
-                            <div class="form-group">
-                                <label for="scanKTP">Upload KTP</label>
-                                <input type="file" name="scanKTP" class="form-control" id="scanKTP">
+                                <input type="password" class="form-control" id="password">
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
@@ -698,14 +645,14 @@
 
     <!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
-    <script src="{{url('')}}/js/jquery-1.11.0.min.js"></script>
-    <script src="{{url('')}}/js/bootstrap.min.js"></script>
-    <script src="{{url('')}}/js/jquery.cookie.js"></script>
-    <script src="{{url('')}}/js/waypoints.min.js"></script>
-    <script src="{{url('')}}/js/modernizr.js"></script>
-    <script src="{{url('')}}/js/bootstrap-hover-dropdown.js"></script>
-    <script src="{{url('')}}/js/owl.carousel.min.js"></script>
-    <script src="{{url('')}}/js/front.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/bootstrap-hover-dropdown.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/front.js"></script>
 
 
 
