@@ -19,4 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::get('')
+
+
+////ADMIN//////
+Route::get('/list-kota', 'AdminController@list_kota');
+Route::post('/tambahkan-kota', 'AdminController@tambahkan_kota');
+Route::get('/hapus-kota/{id_kota}', 'AdminController@hapus_kota');
